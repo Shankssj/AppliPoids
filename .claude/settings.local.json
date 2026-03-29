@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-expo-app@latest . --template blank-typescript)",
+      "Read(//b/Code/**)",
+      "Bash(npx create-expo-app@latest VitaQuestTemp --template blank-typescript)",
+      "Bash(cp -r \"B:/Code/VitaQuestTemp/\"* \"B:/Code/AppliPoids/\")",
+      "Bash(cp \"B:/Code/VitaQuestTemp/.gitignore\" \"B:/Code/AppliPoids/\")",
+      "Bash(rm -rf \"B:/Code/VitaQuestTemp\")",
+      "Bash(npm install:*)",
+      "Bash(npx expo:*)",
+      "Bash(ls \"B:/Code/AppliPoids/babel.config.\"*)",
+      "Bash(ls \"B:/Code/AppliPoids/metro.config.\"*)"
+    ]
+  }
+}
