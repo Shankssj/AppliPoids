@@ -19,8 +19,12 @@ let storage: StateStorage;
 if (Platform.OS === 'web') {
   storage = webStorage;
 } else {
-  // Lazy require to avoid import.meta issues on web
-  const AsyncStorage = require('@react-native-async-storage/async-storage').default;
+  // Lazy require pour éviter les erreurs import.meta sur le web
+  const AsyncStorageModule = require('@react-native-async-storage/async-storage');
+  
+  // Sécurise l'import selon que le module utilise CommonJS ou ESM
+  const AsyncStorage = AsyncStorageModule.default || AsyncStorageModule;
+  
   storage = {
     getItem: async (name: string) => {
       const value = await AsyncStorage.getItem(name);
